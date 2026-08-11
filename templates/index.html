@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Task Manager</title>
+
+</head>
+
+<body>
+
+<h1>Task Manager</h1>
+
+<form method="POST">
+
+    <input
+        type="text"
+        name="title"
+        placeholder="Enter a task"
+        required>
+
+    <button type="submit">
+        Add
+    </button>
+
+</form>
+
+<hr>
+
+<h2>Tasks</h2>
+
+<ul>
+
+{% for task in tasks %}
+
+<li>
+
+    {{ task[1] }}
+
+    <a href="/update/{{ task[0] }}">
+        Edit
+    </a>
+
+    <a href="/delete/{{ task[0] }}">
+        Delete
+    </a>
+
+</li>
+
+{% endfor %}
+
+</ul>
+
+</body>
+
+</html>
